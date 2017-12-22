@@ -1,0 +1,46 @@
+.sect-3
+	background-image: url('../img/bg/3.jpg')
+	&_circle
+		width: 215px
+		height: 215px
+		border: solid 2px $blue
+		border-radius: 50%
+		margin: 26px auto 26px
+		position: relative
+		p
+			+Alice
+			color: $text-white
+			text-align: center
+			line-height: .8
+		p:nth-child(2)
+			font-size: 44.4px
+		p:nth-child(1)
+			font-size: 126.8px
+			margin-top: 40px
+	&_content
+		margin-top: 130px
+	&_arrow
+		width: 194px
+		height: 55px
+		position: absolute
+		border: 2px dotted $blue
+		&__1
+			top: 21px
+			left: 207px
+			border-left-color: transparent
+			border-top-color: transparent
+		&__2
+			top: 21px
+			left: -190px
+			border-right-color: transparent
+			border-top-color: transparent
+		&__3
+			top: 138px
+			left: -190px
+			border-right-color: transparent
+			border-bottom-color: transparent
+		&__4
+			top: 138px
+			left: 207px
+			border-left-color: transparent
+			border-bottom-color: transparent

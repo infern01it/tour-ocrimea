@@ -1,0 +1,50 @@
+@import "bourbon"
+
+$orange: #ffc91b
+$blue: #3dbafd
+
+$text-white: #fff
+$text-dark: #003348
+
+$col1: 8.33333%
+$col2: 16.66667%
+$col3: 25%
+$col4: 33.33333%
+$col5: 41.66667%
+$col6: 50%
+$col7: 58.33333%
+$col8: 66.66667%
+$col9: 75%
+$col10: 83.33333%
+$col11: 91.66667%
+$col12: 100%
+
+$con-lg: 1170px
+$con-md: 970px
+$con-sm: 750px
+$con-xs: auto
+
+=Alice
+	font-family: "Alice", serif
+
+=Roboto
+	font-family: "RobotoSlab"
+
+=clearfix
+	&::after
+		content: ''
+		display: block
+		clear: both
+
+=trs($time)
+	transition: all $time ease-out
+
+@mixin placeholdercolor($color)
+	&::-webkit-input-placeholder
+		color: $color
+	&:-moz-placeholder
+		color: $color
+	&::-moz-placeholder
+		color: $color
+	&:-ms-input-placeholder
+		color: $color

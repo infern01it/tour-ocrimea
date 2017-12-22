@@ -1,0 +1,249 @@
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+
+body
+	min-width: 320px
+	position: relative
+	+Roboto
+	font-size: 14px
+	line-height: 24px
+	font-weight: 400
+	color: #4a4a4a
+	overflow-x: hidden
+	backface-visibility: hidden
+	-o-backface-visibility: hidden
+	-webkit-backface-visibility: hidden
+	-moz-backface-visibility:    hidden
+	-ms-backface-visibility:     hidden
+
+section
+	position: relative
+
+srtong, b
+	font-weight: 700
+
+em, i
+	font-style: italic
+
+
+p
+	color: $text-white
+	text-align: center
+	font-size: 18px
+	line-height: 30px
+	font-weight: 300
+
+.stick
+	display: block
+	margin: 0 auto
+	&__sm
+		width: 95px
+		height: auto
+	&__lg
+		width: 170px
+		height: auto
+	&__blue
+		path
+			fill: $blue
+	&__orange
+		path
+			fill: $orange
+
+.btn-2
+	display: inline-block
+	width: 215px
+	height: 56px
+	margin: 0
+	padding: 0
+	border-radius: 28px
+	background-color: transparent
+	border: solid 2px $orange
+	outline: none
+	color: $text-white
+	font-size: 20px
+	font-weight: 300
+	text-align: center
+	+trs(.3s)
+	&:hover
+		color: $orange
+		text-decoration: none
+
+.btn
+	display: inline-block
+	outline: none !important
+	box-shadow: none !important
+	&::before,
+	&::after
+		content: ''	
+		position: absolute
+		top: 0
+		width: 0
+		height: 0
+		border-style: solid
+		border-bottom-color: transparent
+		border-top-color: transparent
+	&__left
+		&::after
+			display: none
+		&.btn__lg
+			padding-left: 0
+			border-bottom-right-radius: 0
+			border-top-right-radius: 0
+	&__right
+		&::before
+			display: none
+		&.btn__lg
+			padding-right: 0
+			border-bottom-left-radius: 0
+			border-top-left-radius: 0
+	&__sm
+		padding: 0 9px
+		height: 33px
+		font-size: 16px
+		line-height: 30px
+		font-weight: 300
+		&::before
+			left: -15px
+			border-width: 15px
+			border-left-width: 0
+		&::after
+			right: -15px
+			border-width: 15px
+			border-right-width: 0
+	&__lg
+		padding: 0 9px
+		height: 71px
+		font-size: 16px
+		line-height: 30px
+		font-weight: 300
+		&::before
+			left: -35px
+			border-width: 35px
+			border-left-width: 0
+		&::after
+			right: -35px
+			border-width: 35px
+			border-right-width: 0
+	&__orange
+		background-color: $orange
+		color: #000
+		&::before
+			border-right-color: $orange
+		&::after
+			border-left-color: $orange
+
+.design-border
+	position: relative
+	width: calc(100% + 60px)
+	margin-left: -30px
+	+clearfix
+	&_side1
+		position: absolute
+		left: -3px
+		width: calc(100% + 6px)
+		display: flex
+		justify-content: space-between
+		&::before,
+		&::after
+			content: ''
+			display: inline-block
+			width: calc(50% - 8px)
+			height: 3px
+			background-color: $orange
+		span
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			display: inline-block
+			width: 18px
+			height: 18px
+			background-repeat: no-repeat
+			background-size: contain
+	&_side2
+		position: absolute
+		top: 0
+		width: 3px
+		height: 100%
+		display: flex
+		justify-content: space-between
+		flex-direction: column
+		&::before,
+		&::after
+			content: ''
+			display: inline-block
+			width: 3px
+			height: calc(50% - 35px)
+			background-color: $orange
+		span
+			display: inline-block
+			width: 6px
+			height: 70px
+			&::before
+				content: ''
+				display: inline-block
+				width: 6px
+				height: 6px
+				background-color: $orange
+				position: absolute
+				top: 50%
+				left: 50%
+				border-radius: 3px
+				transform: translate(-50%, -50%)
+	&_top
+		top: -2px
+		align-items: flex-start
+		span
+			background-image: url('../img/design-border/top.svg')
+			background-position: 50% 0%
+	&_bottom
+		bottom: -2px
+		align-items: flex-end
+		span
+			background-image: url('../img/design-border/bot.svg')
+			background-position: 50% 100%
+	&_left
+		left: -3px
+	&_right
+		right: -3px
+
+.plashka
+	background-repeat: no-repeat
+	background-size: contain
+	display: flex
+	justify-content: center
+	align-items: center
+	margin: 0 auto
+	text-align: center
+	span
+		color: #000
+	&__sm
+		width: 149px
+		height: 63px
+	&__lg
+		height: 82px
+		width: 222px
+		span
+			font-size: 24px
+			line-height: 36px
+	&__orange
+		background-image: url(../img/6-plashka.png)
+	&__blue
+		background-image: url('../img/5-plashka.png')
+		
+
+@media only screen and (max-width : 1199px)
+	/**/
+
+@media only screen and (max-width : 1024px)
+	/**/
+
+@media only screen and (max-width : 991px)
+	/**/
+
+@media only screen and (max-width : 767px)
+	/**/

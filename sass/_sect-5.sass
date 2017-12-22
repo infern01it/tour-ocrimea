@@ -1,0 +1,96 @@
+.sect-5
+	background-image: url('../img/bg/5.jpg')
+	background-position: 50% 0
+	&_table
+		border: solid 2px $blue
+		margin-top: 56px
+
+.s5-table
+	&_head
+		display: flex
+		flex-direction: row
+		justify-content: space-around
+		width: 100%
+	table
+		width: 100%
+		margin: 40px 0
+		border: 1px dashed
+		border-right: none
+		border-left: none
+		border-top-color: $blue
+		border-bottom-color: $blue
+		&:first-child
+			margin: 51px 0 40px
+		&:last-child
+			margin: 40px 0 69px
+		tr
+			height: 45px
+			td:nth-child(1)
+				text-align: right
+				color: $text-dark
+				.arrow
+					margin: auto 21px
+			td:nth-child(2)
+				width: 210px
+				text-align: right
+				span
+					display: inline-block
+					position: relative
+					font-size: 12px
+					line-height: 2.0
+					text-align: center
+					color: $text-white
+					height: 28px
+					padding: 0 12px						
+					animation: anim-badges 1s infinite ease-in-out
+					&::before
+						content: ''
+						position: absolute
+						display: block
+						top: 0
+						left: -13px
+				span.gray
+					background-color: #8bb0c4
+					&::before
+						+triangle(28px, #8bb0c4, left)
+				span.green
+					background-color: #93c84e
+					&::before
+						+triangle(28px, #93c84e, left)
+				span.orange
+					background-color: #de895b
+					&::before
+						+triangle(28px, #de895b, left)
+		tr:first-child		
+			td:last-child
+				font-size: 42px
+				vertical-align: top
+				text-align: center
+				+Alice
+				line-height: .8
+				width: 45%
+				padding-top: 8px
+				span
+					font-size: 24px
+				strike
+					font-size: 30px
+					color: #95bdce
+					~ span
+						font-size: 24px
+						color: #95bdce
+		tr:first-child
+			td:not(:last-child)
+				border-bottom: 1px dashed $blue
+		tr
+			td
+				border-bottom: 1px dashed $blue
+		tr:first-child
+			td:not(:last-child)
+				border-bottom: 1px dashed $blue
+
+
+@keyframes anim-badges
+    0%, 100%
+        filter: brightness(.9)
+    50%		
+    	filter: brightness(1)

@@ -1,0 +1,44 @@
+.header
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 10
+	width: 100vw
+	height: 14.8vh
+	&_logo
+		margin: 5vh 0
+		display: inline-block
+		height: 41px
+		svg
+			height: inherit
+	&_menu
+		margin: 5vh 0
+		padding: 0
+		list-style: none
+		display: flex
+		justify-content: space-around
+		height: 41px
+		li
+			height: 41px
+		a
+			position: relative
+			display: inline-block
+			color: #fff
+			font-size: 14px
+			line-height: 41px
+			text-decoration: none
+			+trs(.3s)
+			&::after
+				content: ''
+				display: block
+				width: 100%
+				height: 2px
+				background-color: $orange
+				border-radius: 2px
+				position: absolute
+				bottom: 5px
+				opacity: 0
+				+trs(.3s)
+			&:hover, &.active
+				&::after
+					opacity: 1
