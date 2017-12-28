@@ -1,0 +1,43 @@
+.sect-8
+	background-image: url(../img/sect-8/stone-1.png), url(../img/sect-8/stone-2.png), url(../img/sect-8/stone-5.png), url(../img/sect-8/stone-3.png), url(../img/sect-8/stone-4.png), url(../img/sect-8/stone-0.png)
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat
+	background-position: 274px -40px, 100% 638px, 150px 80%, 0 50%, 100% 10%, 98% 90%
+	background-size: auto, auto, auto, auto, auto, auto
+	&_accordion
+		margin-top: 40px !important
+	
+.accordion
+	margin: 0
+	padding: 0
+	list-style: none
+	&_item
+		margin-bottom: 24px
+		&:not(.open)
+			> svg 
+				path,
+				rect
+					fill: #c8d4de !important
+	&_title
+		margin: 0
+		padding-bottom: 7px
+		cursor: pointer
+		h3
+			margin: 0
+			+Alice
+			color: $text-dark
+			font-size: 30px
+			line-height: 42px
+			font-weight: 400
+			text-align: center
+	&_data
+		position: relative
+		padding-top: 100px
+		+clearfix
+		svg
+			position: absolute
+			top: 29px
+			left: 50%
+		p
+			margin-bottom: 25px
+			text-align: left
+			color: $text-dark

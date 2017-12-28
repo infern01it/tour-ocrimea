@@ -61,8 +61,21 @@ $(function() {
 		arrows: false,
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		asNavFor: '.s4-slider-desc'
-		//centerMode: true
+		asNavFor: '.s4-slider-desc',
+		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 991,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
 	});
 	
 	$('.sect-4_slider-next').on('click', function() {
@@ -88,6 +101,29 @@ $(function() {
 		fade: true,
 		asNavFor: '.s4-slider',
 		swipe: false
+	});
+	
+	/* Аккордеон 8 секция */
+	var allAccordionItem = $('.accordion_item');
+	var allAccordionTitle = $('.accordion_title');
+	var allAccordionData = $('.accordion_data');
+	
+	allAccordionTitle.click(function() {
+		var thisAccordionItem = $(this).parent();
+		
+		if(thisAccordionItem.hasClass('open')) {
+			thisAccordionItem.removeClass('open');
+			thisAccordionItem
+				.children(".accordion_data")
+				.slideUp("slow");
+		} else {
+			allAccordionData.slideUp("slow");
+			allAccordionItem.removeClass('open');
+			thisAccordionItem.addClass('open');
+			thisAccordionItem
+				.children(".accordion_data")
+				.slideDown("slow");
+		}
 	});
 
 });
