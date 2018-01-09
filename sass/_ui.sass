@@ -149,6 +149,13 @@ p
 			border-right-color: $orange
 		&::after
 			border-left-color: $orange
+	&__white
+		background-color: #fff
+		color: #000
+		&::before
+			border-right-color: #fff
+		&::after
+			border-left-color: #fff
 	&__blue
 		background-color: $blue
 		color: #fff
@@ -306,4 +313,15 @@ p
 		margin-left: 0
 
 @media only screen and (max-width : 767px)
-	/**/
+	p
+		font-size: 14px
+		line-height: 18px
+	
+	.design-border
+		&_side1
+			left: 5px
+			width: calc(100% - 10px)
+		&_left
+			left: 5px
+		&_right
+			right: 5px

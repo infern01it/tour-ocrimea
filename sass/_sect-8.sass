@@ -10,13 +10,47 @@
 	margin: 0
 	padding: 0
 	list-style: none
+	&_border
+		height: 25px
+		position: relative
+		+clearfix
+		span
+			display: block
+			height: 1px
+			width: calc(100% - 20px)
+			position: absolute
+			top: 50%
+			left: 10px
+			+trs(.3s)
+		svg
+			&:first-child
+				position: absolute
+				left: 0
+				top: 0
+			&:last-child
+				position: absolute
+				right: 0
+				top: 0
+			path,
+			rect
+				+trs(.3s)
 	&_item
 		margin-bottom: 24px
-		&:not(.open)
-			> svg 
+		.accordion_border
+			span
+				background-color: $orange
+			svg 
 				path,
 				rect
-					fill: #c8d4de !important
+					fill: $orange !important
+		&:not(.open)
+			.accordion_border
+				span
+					background-color: #c8d4de
+				svg
+					path,
+					rect
+						fill: #c8d4de !important
 	&_title
 		margin: 0
 		padding-bottom: 7px
@@ -41,3 +75,42 @@
 			margin-bottom: 25px
 			text-align: left
 			color: $text-dark
+
+@media only screen and (max-width : 767px)
+	.sect-8
+		background-image: none
+		&_accordion
+			padding-left: 15px
+			padding-right: 15px
+	
+	.accordion
+		&_item
+			position: relative
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				z-index: -1
+				top: 13px
+				bottom: 13px
+				left: 15px
+				right: 15px
+				background-color: rgba(#dcc387, .1)
+				+trs(.3s)
+			&:not(.open)
+				&::before
+					background-color: rgba(#dcc387, 0)
+		&_title
+			padding-bottom: 0
+			h3
+				font-size: 18px
+				line-height: 24px
+		&_data
+			padding-top: 45px
+			svg
+				display: none
+			p
+				text-align: center
+				font-size: 12px
+				padding-left: 10px
+				padding-right: 10px

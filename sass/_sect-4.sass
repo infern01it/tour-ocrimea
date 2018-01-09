@@ -82,3 +82,26 @@
 			left: 50px
 		&_slider-next
 			right: 50px
+
+@media only screen and (max-width : 767px)
+	.sect-4
+		&_slider
+			margin-top: 45px
+			padding-bottom: 81px
+		&_slider-prev,
+		&_slider-next
+			position: absolute
+			top: auto
+			bottom: 0
+			transform: translateY(0)
+			font-size: 40px
+		&_slider-prev
+			left: calc(50% - 45px)
+		&_slider-next
+			right: calc(50% - 45px)
+	
+	.s4-slider-desc
+		&_item
+			h3
+				font-size: 24px
+				font-weight: 300

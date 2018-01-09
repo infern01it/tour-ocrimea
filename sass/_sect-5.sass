@@ -41,7 +41,7 @@
 					text-align: center
 					color: $text-white
 					height: 28px
-					padding: 0 12px						
+					padding: 0 12px
 					animation: anim-badges 1s infinite ease-in-out
 					&::before
 						content: ''
@@ -94,3 +94,52 @@
         filter: brightness(.9)
     50%		
     	filter: brightness(1)
+	
+.s5-list
+	ul
+		list-style: none
+		padding: 0
+		margin: 61px 0
+		&:first-child
+			margin: 25px 0 25px
+		&:last-child
+			margin: 25px 0 25px
+		li
+			min-height: 61px
+			text-align: center
+			color: $text-dark
+			border-top: 1px dashed $blue
+			background-color: rgba(126, 192, 227, .1)
+			padding: 21px 0
+			.arrow
+				margin: auto 21px
+			span
+				display: inline-block
+				padding: 4px 12px
+				font-size: 12px
+				height: 29px
+				&::before
+					display: none
+			span.gray
+				background-color: #8bb0c4
+			span.green
+				background-color: #93c84e
+			span.orange
+				background-color: #de895b
+			&:last-child
+				font-size: 42px
+				vertical-align: top
+				text-align: center
+				border-bottom: 1px dashed $blue
+				+Alice
+				line-height: .8
+				padding: 8px 0
+				span
+					font-size: 24px
+					padding: 0
+				strike
+					font-size: 30px
+					color: #95bdce
+					~ span
+						font-size: 24px
+						color: #95bdce

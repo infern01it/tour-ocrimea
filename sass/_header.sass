@@ -42,3 +42,22 @@
 			&:hover, &.active
 				&::after
 					opacity: 1
+	&__footer
+		position: static
+		height: 64px
+		.header
+			&_logo,
+			&_menu
+				margin: 11px auto
+
+@media only screen and (max-width : 991px)
+	.header
+		&_logo
+			display: block
+			width: 150px
+			margin: 2vh auto 1vh
+			text-align: center
+		&_menu
+			margin: 0
+		&__footer
+			height: auto

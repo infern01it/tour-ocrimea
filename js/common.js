@@ -26,7 +26,6 @@ $(function() {
 			$img.replaceWith($svg);
 
 		}, 'xml');
-
 	});
 	
 	/* Показать/Скрыть попап */
@@ -47,13 +46,18 @@ $(function() {
 			$('html').css('overflow', 'hidden');
 		}
 	}
-		
-//	$(document).on('click', '.js-open-menu', function() {
-//		switchPopup('.menu');
-//	});
-//	$(document).on('click', '.js-open-callback', function() {
-//		switchPopup('.callback-popup');
-//	});
+	
+	$(document).on('click', '.js-tgl-callback', function() {
+		switchPopup('.popup_callback');
+	});
+	
+	$(document).on('click', '.js-tgl-social-1', function() {
+		switchPopup('.popup_social-1');
+	});
+	
+	$(document).on('click', '.js-tgl-social-2', function() {
+		switchPopup('.popup_social-2');
+	});
 	
 	$('.s4-slider').slick({
 		lazyLoad: 'ondemand',
@@ -125,6 +129,17 @@ $(function() {
 				.slideDown("slow");
 		}
 	});
-
+	
+	$('.nav li').on('click', function() {
+		var thisScrollTop = $(window).scrollTop();
+		var thisSlide = Number($(this).data('slide'));
+		var scrollSect = $('.sect-' + thisSlide);
+		var sctollTop = scrollSect.offset().top;
+		var speed = Math.abs(thisScrollTop - sctollTop);
+		console.log(speed <= 2000 ? speed : 2000);
+        $('html, body').animate({
+			scrollTop: sctollTop
+		}, speed <= 2000 ? speed : 2000);
+	});
+	
 });
-
