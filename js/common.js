@@ -98,10 +98,10 @@ $(function() {
 		$('.s4-slider').slick('slickPrev');
 	});
 	
-	$(window).ready(function() {
-		var selectDay = localStorage.getItem('selectDay') ? Number(localStorage.getItem('selectDay'))-1 : 0;
-		$('.s4-slider').slick('slickGoTo', selectDay);
-	});
+//	$(window).ready(function() {
+//		var selectDay = localStorage.getItem('selectDay') ? Number(localStorage.getItem('selectDay'))-1 : 0;
+//		$('.s4-slider').slick('slickGoTo', selectDay);
+//	});
 	
 	$('.s4-slider-desc').slick({
 		lazyLoad: 'ondemand',
