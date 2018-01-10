@@ -36,14 +36,14 @@ $(function() {
 			popup.removeClass('visible');
 			setTimeout(function() {
 				popup.removeClass('display');
-				$('html').css('overflow', 'auto');
+				$('html').css('overflow-y', 'auto');
 			}, 300);
 		} else {
 			popup.addClass('display');
 			setTimeout(function() {
 				popup.addClass('visible');
 			}, 1);
-			$('html').css('overflow', 'hidden');
+			$('html').css('overflow-y', 'hidden');
 		}
 	}
 	

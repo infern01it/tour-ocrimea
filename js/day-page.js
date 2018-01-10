@@ -53,7 +53,7 @@ $(function() {
 	
 	$('.gallery_slider').slick({
 		lazyLoad: 'ondemand',
-		infinite: false,
+		infinite: true,
 		arrows: false,
 		slidesToShow: 1,
 		slidesToScroll: 1,
