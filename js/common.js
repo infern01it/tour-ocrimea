@@ -130,16 +130,18 @@ $(function() {
 		}
 	});
 	
-	$('.nav li').on('click', function() {
+	var goToSlide = function(scrollTop, speed) {
+        $('html, body').animate({scrollTop: sctollTop}, speed);
+	}
+	
+	$('.nav li, .scroll-top').on('click', function(e) {
+		e.preventDefault();
 		var thisScrollTop = $(window).scrollTop();
 		var thisSlide = Number($(this).data('slide'));
 		var scrollSect = $('.sect-' + thisSlide);
 		var sctollTop = scrollSect.offset().top;
 		var speed = Math.abs(thisScrollTop - sctollTop);
-		console.log(speed <= 2000 ? speed : 2000);
-        $('html, body').animate({
-			scrollTop: sctollTop
-		}, speed <= 2000 ? speed : 2000);
+		goToSlide(sctollTop, speed <= 2000 ? speed : 2000);
 	});
 	
 });
