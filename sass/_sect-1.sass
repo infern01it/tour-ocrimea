@@ -5,7 +5,7 @@
 		transform: translate(150%, 150%)
 	&_title-text
 		opacity: 0
-		transform: scale(.8)
+		transform: scale(.8) translateY(5vh)
 	&_desc-block
 		opacity: 0
 
@@ -39,35 +39,16 @@ body.ready
 @keyframes title-text-anim
 	0%
 		opacity: 0
-		transform: scale(.8)
+		transform: scale(.8) translateY(5vh)
 	100%
 		opacity: 1
-		transform: scale(1)
+		transform: scale(1) translateY(0)
 	
 @keyframes desc-block-anim
 	0%
 		opacity: 0
 	100%
 		opacity: 1
-
-//.preloader
-//	position: fixed
-//	z-index: 100
-//	top: 0
-//	left: 0
-//	width: 100vw
-//	height: 100vh
-//	background-color: #221413
-//	background-image: url('../img/bg/1.jpg')
-//	background-position: 50% 50%
-//	background-size: cover
-//	background-repeat: no-repeat
-//	opacity: 1
-//	transition: all .2s ease-in-out
-//	&.display
-//		display: none
-//	&.visible
-//		opacity: 0
 
 .sect-1
 	z-index: 10
