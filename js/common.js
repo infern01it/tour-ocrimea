@@ -131,17 +131,17 @@ $(function() {
 	});
 	
 	var goToSlide = function(scrollTop, speed) {
-        $('html, body').animate({scrollTop: sctollTop}, speed);
+        $('html, body').animate({scrollTop: scrollTop}, speed);
 	}
 	
-	$('.nav li, .scroll-top').on('click', function(e) {
+	$('.nav li, .scroll-sect').on('click', function(e) {
 		e.preventDefault();
 		var thisScrollTop = $(window).scrollTop();
 		var thisSlide = Number($(this).data('slide'));
 		var scrollSect = $('.sect-' + thisSlide);
-		var sctollTop = scrollSect.offset().top;
-		var speed = Math.abs(thisScrollTop - sctollTop);
-		goToSlide(sctollTop, speed <= 2000 ? speed : 2000);
+		var scrollTop = scrollSect.offset().top;
+		var speed = Math.abs(thisScrollTop - scrollTop);
+		goToSlide(scrollTop, speed <= 2000 ? speed : 2000);
 	});
 	
 });
