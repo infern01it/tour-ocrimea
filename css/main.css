@@ -964,8 +964,8 @@ body.ready .sect-1_bg__boat-girl {
 }
 
 body.ready .sect-1_title-text {
-	-webkit-animation: title-text-anim 1s ease-in-out 1s;
-	animation: title-text-anim 1s ease-in-out 1s;
+	-webkit-animation: title-text-anim 1s cubic-bezier(0.17, 0.67, 0.47, 1.23) 1s;
+	animation: title-text-anim 1s cubic-bezier(0.17, 0.67, 0.47, 1.23) 1s;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
