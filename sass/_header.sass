@@ -1,10 +1,19 @@
 .header
+	top: -14.8vh
+	opacity: 0
+
+body.ready
+	.header
+		top: 0
+		opacity: 1
+
+.header
 	position: absolute
-	top: 0
+	z-index: 15
 	left: 0
-	z-index: 10
 	width: 100vw
 	height: 14.8vh
+	+trs(.5s)
 	&_logo
 		margin: 5vh 0
 		display: inline-block

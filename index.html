@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
+<head style="overflow-y: hidden;">
 	<meta charset="utf-8">
 
 	<title>Тур по Крыму "Все включено" 11 дней 10 ночей</title>
@@ -26,6 +26,30 @@
 </head>
 
 <body>
+	<style>
+		.preloader {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #221413;
+			background-image: url('../img/bg/1.jpg');
+			background-position: 50% 50%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: 1;
+			transition: all .2s ease-in-out;
+		}
+		.preloader.display {
+			display: none;
+		}
+		.preloader.visible {
+			opacity: 0;
+		}
+	</style>
+	<div class="preloader"></div>
 	
 	<header class="header">
 		<div class="container">
@@ -1010,5 +1034,20 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/common.js"></script>
 	<script src="//yastatic.net/share2/share.js"></script>
+	
+	<script>
+		$(function() {
+			$(document).ready(function() {
+				setTimeout(function() {
+					$('.preloader').addClass('visible');
+				}, 200);
+				setTimeout(function() {
+					$('.preloader').addClass('display');
+					$('body').addClass('ready');
+					$('html').style('overflow-y', 'auto');
+				}, 400);
+			});
+		});
+	</script>
 </body>
 </html>
