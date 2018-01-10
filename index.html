@@ -22,13 +22,7 @@
 <!--	<meta name="apple-mobile-web-app-status-bar-style" content="#000">-->
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/slick.css">
-	<link rel="stylesheet" href="css/slick-theme.css">
 	<link rel="stylesheet" href="css/main.css">
-	
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/common.js"></script>
 </head>
 
 <body>
@@ -194,7 +188,7 @@
 				</div>
 			</div>
 		</div>
-		<button class="btn btn__lg btn__blue sect_btm-btn">Посмотреть маршрут</button>
+		<button class="btn btn__lg btn__blue sect_btm-btn js-tgl-map">Посмотреть маршрут</button>
 	</section>
 	
 	<section id="sect-4" class="sect sect__pt sect__pb sect-4">
@@ -909,7 +903,8 @@
 		<li data-slide="9"><span>Остались вопросы?</span></li>
 	</ul>
 	
-	<div class="popup popup_callback js-tgl-callback">
+	<div class="popup popup_callback">
+		<div class="popup_bg js-tgl-callback"></div>
 		<div class="popup_wrap">
 			<div class="popup_content">
 				<div class="popup_header">Позвоните нам <a href="tel:+79788331817">+7 978 833 18 17</a><br>-ИЛИ-</div>
@@ -938,7 +933,8 @@
 		</div>
 	</div>
 	
-	<div class="popup popup_social-1 popup__lg js-tgl-social-1">
+	<div class="popup popup_social-1 popup__lg">
+		<div class="popup_bg js-tgl-social-1"></div>
 		<div class="popup_wrap">
 			<div class="popup_content">
 				<h2 class="popup_title sect_title sect_title__dark">Не можете принять окончательное решение?</h2>
@@ -954,7 +950,8 @@
 		</div>
 	</div>
 	
-	<div class="popup popup_social-2 popup__lg js-tgl-social-2">
+	<div class="popup popup_social-2 popup__lg">
+		<div class="popup_bg js-tgl-social-2"></div>
 		<div class="popup_wrap">
 			<div class="popup_content">
 				<h2 class="popup_title sect_title sect_title__dark">Здорово!</h2>
@@ -969,8 +966,49 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="popup popup_map popup__lg popup__nopadding">
+		<div class="popup_bg js-tgl-map"></div>
+		<div class="popup_wrap">
+			<div class="popup_content">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=uxfApUDy0TiIbhMTj8_lmsLO_g03JDcj&amp;width=100%25&amp;height=700&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+				
+				<button class="popup_close js-tgl-map"></button>
+			</div>
+		</div>
+	</div>
+
+	<menu class="mobile-menu hidden-sm hidden-md hidden-lg js-tgl-menu">
+		<button class="mobile-menu_toggle-btn"><span></span></button>
+		<ul class="header_menu">
+			<li class="scroll-sect" data-slide="2">
+				<a href="#">О туре</a>
+			</li>
+			<li class="scroll-sect" data-slide="3">
+				<a href="#">Что внутри</a>
+			</li>
+			<li class="scroll-sect" data-slide="5">
+				<a href="#">Цены и даты</a>
+			</li>
+			<li class="scroll-sect" data-slide="6">
+				<a href="#">Что включено</a>
+			</li>
+			<li class="scroll-sect" data-slide="7">
+				<a href="#">Почему этот тур?</a>
+			</li>
+			<li class="scroll-sect" data-slide="8">
+				<a href="#">Вопрос - ответ</a>
+			</li>
+		</ul>
+	</menu>
 
 
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/common.js"></script>
 	<script src="//yastatic.net/share2/share.js"></script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+.mobile-menu
+	position: fixed
+	z-index: 100
+	top: 0
+	left: 0
+	width: 40px
+	height: 40px
+	padding: 0
+	margin: 0
+	background-color: #13262f
+	display: flex
+	justify-content: center
+	align-items: center
+	+trs(.3s)
+	.header_menu
+		transition-delay: .4s
+		+trs(.3s)
+	&.display
+		width: 100vw
+		height: 100vh
+	&.visible
+		.mobile-menu
+			&_toggle-btn
+				span
+					background-color: rgba(0, 0, 0, 0)
+					&::before
+						top: 0
+						transform: rotate(-45deg)
+					&::after
+						bottom: 0
+						transform: rotate(45deg)
+		.header_menu
+			opacity: 1
+	&:not(.display)
+		.header_menu
+			display: none
+	&:not(.visible)
+		.header_menu
+			opacity: 0
+	&_toggle-btn
+		width: 40px
+		height: 40px
+		border: none
+		outline: none
+		position: absolute
+		background-color: #13262f
+		top: 0
+		left: 0
+		span
+			display: block
+			width: 25px
+			height: 2px
+			background-color: $orange
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			+trs(.3s)
+			&::before,
+			&::after
+				content: ''
+				display: block
+				width: inherit
+				height: inherit
+				background-color: $orange
+				transform-origin: center center
+				position: absolute
+				left: 0
+				+trs(.3s)
+			&::before
+				top: -8px
+			&::after
+				bottom: -8px

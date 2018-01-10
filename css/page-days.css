@@ -124,7 +124,7 @@
 	background-color: #ffc91b;
 	color: #000;
 	font-weight: 700;
-	padding: 0 30px;
+	padding: 5px 30px;
 	height: 102px;
 	font-size: 50px;
 	line-height: 1.7;
@@ -232,5 +232,11 @@
 		-webkit-transform: translateY(0);
 		-ms-transform: translateY(0);
 		transform: translateY(0);
+	}
+
+	.gallery_title h2 {
+		font-size: 30px;
+		line-height: 36px;
+		padding: 0;
 	}
 }

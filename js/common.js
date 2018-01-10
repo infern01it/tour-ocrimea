@@ -59,6 +59,14 @@ $(function() {
 		switchPopup('.popup_social-2');
 	});
 	
+	$(document).on('click', '.js-tgl-map', function() {
+		switchPopup('.popup_map');
+	});
+	
+	$(document).on('click', '.js-tgl-menu', function() {
+		switchPopup('.mobile-menu');
+	});
+	
 	$('.s4-slider').slick({
 		lazyLoad: 'ondemand',
 		infinite: false,
@@ -90,9 +98,9 @@ $(function() {
 		$('.s4-slider').slick('slickPrev');
 	});
 	
-	$('.s4-slider_item').on('click', function() {
-		var thisSlide = $(this).data('slide');
-		$('.s4-slider').slick('slickGoTo', thisSlide);
+	$(window).ready(function() {
+		var selectDay = localStorage.getItem('selectDay') ? Number(localStorage.getItem('selectDay'))-1 : 0;
+		$('.s4-slider').slick('slickGoTo', selectDay);
 	});
 	
 	$('.s4-slider-desc').slick({

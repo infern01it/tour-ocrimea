@@ -69,4 +69,11 @@ $(function() {
 		$('.gallery_slider').slick('slickPrev');
 	});
 	
+	$('.gallery_close').on('click', function() {
+		var thisDay = $(this).data('day');
+		localStorage.setItem("selectDay", thisDay);
+//		var thisHref = $(this).attr('href');
+//		location.replace(thisHref);
+	});
+	
 });

@@ -7,7 +7,6 @@
 	height: 100vh
 	justify-content: center
 	align-items: center
-	background-color: rgba(34, 20, 19, 0.9)
 	overflow-y: auto
 	opacity: 0
 	display: none
@@ -20,8 +19,21 @@
 		.popup
 			&_wrap
 				width: 845px
+	&__nopadding
+		.popup
+			&_content
+				padding: 0
+	&_bg
+		position: absolute
+		z-index: 0
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(34, 20, 19, 0.9)
 	&_wrap
 		position: relative
+		z-index: 1
 		width: 585px
 		height: auto
 		max-height: 100vh
