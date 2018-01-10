@@ -939,10 +939,10 @@ body.ready .header {
 }
 
 .sect-1_title-text {
-	-webkit-transform: translateY(-5vh);
-	-ms-transform: translateY(-5vh);
-	transform: translateY(-5vh);
 	opacity: 0;
+	-webkit-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	transform: scale(0.8);
 }
 
 .sect-1_desc-block {
@@ -957,8 +957,8 @@ body.ready .sect-1_bg__light {
 }
 
 body.ready .sect-1_bg__boat-girl {
-	-webkit-animation: boat-girl-anim 2s ease-in-out;
-	animation: boat-girl-anim 2s ease-in-out;
+	-webkit-animation: boat-girl-anim 2s ease-in-out .5s;
+	animation: boat-girl-anim 2s ease-in-out .5s;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
@@ -1023,29 +1023,29 @@ body.ready .sect-1_desc-block {
 
 @-webkit-keyframes title-text-anim {
 	0% {
-		-webkit-transform: translateY(-5vh);
-		transform: translateY(-5vh);
 		opacity: 0;
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
 	}
 
 	100% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
 		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 }
 
 @keyframes title-text-anim {
 	0% {
-		-webkit-transform: translateY(-5vh);
-		transform: translateY(-5vh);
 		opacity: 0;
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
 	}
 
 	100% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
 		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 }
 

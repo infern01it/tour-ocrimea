@@ -4,8 +4,8 @@
 	&_bg__boat-girl
 		transform: translate(150%, 150%)
 	&_title-text
-		transform: translateY(-5vh)
 		opacity: 0
+		transform: scale(.8)
 	&_desc-block
 		opacity: 0
 
@@ -15,7 +15,7 @@ body.ready
 			animation: light-anim 1s ease-in-out
 			animation-fill-mode: forwards
 		&_bg__boat-girl
-			animation: boat-girl-anim 2s ease-in-out
+			animation: boat-girl-anim 2s ease-in-out .5s
 			animation-fill-mode: forwards
 		&_title-text
 			animation: title-text-anim 1s ease-in-out 1s
@@ -38,11 +38,11 @@ body.ready
 	
 @keyframes title-text-anim
 	0%
-		transform: translateY(-5vh)
 		opacity: 0
+		transform: scale(.8)
 	100%
-		transform: translateY(0)
 		opacity: 1
+		transform: scale(1)
 	
 @keyframes desc-block-anim
 	0%
