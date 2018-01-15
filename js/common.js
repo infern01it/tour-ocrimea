@@ -142,6 +142,20 @@ $(function() {
         $('html, body').animate({scrollTop: scrollTop}, speed);
 	}
 	
+	function toggleCalcBtn() {
+		if($(window).scrollTop() >= 50) {
+			$('.calc-btn').addClass('display');
+			setTimeout(function() {
+				$('.calc-btn').addClass('visible');
+			}, 1);
+		} else {
+			$('.calc-btn').removeClass('display');
+			setTimeout(function() {
+				$('.calc-btn').removeClass('visible');
+			}, 300);
+		}
+	}
+	
 	$('.nav li, .scroll-sect').on('click', function(e) {
 		e.preventDefault();
 		var thisScrollTop = $(window).scrollTop();
@@ -158,17 +172,7 @@ $(function() {
 	updateNavigation();
 	$(window).on('scroll', function(){
 		updateNavigation();
-		if($(window).scrollTop() >= 50) {
-			$('.calc-btn').addClass('display');
-			setTimeout(function() {
-				$('.calc-btn').addClass('visible');
-			}, 1);
-		} else {
-			$('.calc-btn').removeClass('display');
-			setTimeout(function() {
-				$('.calc-btn').removeClass('visible');
-			}, 300);
-		}
+		toggleCalcBtn();
 	});
 
 	function updateNavigation() {
