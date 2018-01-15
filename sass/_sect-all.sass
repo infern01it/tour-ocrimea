@@ -52,28 +52,52 @@
 	list-style: none
 	li
 		display: block
-		width: 6px
-		height: 6px
-		background-color: #fff
-		border-radius: 50%
-		margin: 20px 0
-		box-shadow: 0 0 1px 0 #000
+		width: 16px
+		height: 16px
+		margin: 10px 0
 		cursor: pointer
 		+trs(.3s)
+		&::after
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			content: ''
+			display: block
+			width: 6px
+			height: 6px
+			background-color: #fff
+			border-radius: 50%
+			box-shadow: 0 0 1px 0 #000
+		&.display
+			span
+				display: block
+		&.visible
+			&::after
+				background-color: $orange
+			span
+				opacity: 1
+				transform: translate(0, -50%)
 		&:hover
-			background-color: $orange
+			&::after
+				background-color: $orange
 			> span
 				display: block
+				opacity: 1
+				transform: translate(0, -50%)
 		span
 			position: absolute
 			top: 50%
 			right: 30px
-			transform: translateY(-50%)
+			transform: translate(-20px, -50%)
 			background-color: $orange
-			width: 160px
 			height: 24px
+			padding: 0 15px
 			text-align: center
+			white-space: nowrap
 			display: none
+			opacity: 0
+			+trs(.3s)
 			&::before
 				content: ''
 				display: block
@@ -87,6 +111,75 @@
 				border-left-color: $orange
 				border-width: 12px
 				border-right-width: 0
+	
+.top-line
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 7
+	top: 0
+	left: 0
+	width: 100vw
+	height: 47px
+	background-color: $orange
+	padding: 8px 0
+	p, a
+		text-align: left
+		margin: 0
+		font-size: 14px
+		line-height: 30px
+		font-weight: 400
+		color: #333
+	a
+		position: relative
+		display: inline-block
+		font-weight: 700
+		padding-left: 25px
+		&::before
+			content: ''
+			display: block
+			width: 14px
+			height: 18px
+			position: absolute
+			top: 50%
+			left: 0
+			transform: translateY(-50%)
+			background-image: url(../img/calc.svg)
+		&:hover, &:focus, &:active
+			text-decoration: none
+
+.calc-btn
+	position: fixed
+	z-index: 99
+	top: 100px
+	right: 60px
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	background-color: $orange
+	border: none
+	box-shadow: 0 0 0 10px rgba($orange, .6)
+	outline: none
+	display: none
+	opacity: 0
+	padding: 0
+	+trs(.3s)
+	animation: calc-btn-anim 2s ease-in-out infinite
+	img, svg
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&.display
+		display: block
+	&.visible
+		opacity: 1
+
+@keyframes calc-btn-anim
+	0%
+		box-shadow: 0 0 0 0px rgba($orange, .6)
+	100%
+		box-shadow: 0 0 0 10px rgba($orange, 0)
 
 @media only screen and (max-width : 767px)
 	.sect

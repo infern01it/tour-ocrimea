@@ -152,4 +152,42 @@ $(function() {
 		goToSlide(scrollTop, speed <= 2000 ? speed : 2000);
 	});
 	
+	var contentSections = $('.sect'),
+		navigationItems = $('.nav li');
+
+	updateNavigation();
+	$(window).on('scroll', function(){
+		updateNavigation();
+		if($(window).scrollTop() >= 50) {
+			$('.calc-btn').addClass('display');
+			setTimeout(function() {
+				$('.calc-btn').addClass('visible');
+			}, 1);
+		} else {
+			$('.calc-btn').removeClass('display');
+			setTimeout(function() {
+				$('.calc-btn').removeClass('visible');
+			}, 300);
+		}
+	});
+
+	function updateNavigation() {
+		contentSections.each(function(i, el){
+			$this = $(this);
+			var activeSection = Number($(el).attr('id').substr(-1)) -1;
+			if (($this.offset().top - $(window).height()/2 < $(window).scrollTop()) && ($this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop())) {
+				navigationItems.eq(activeSection)
+					.addClass('display');
+				setTimeout(function() {
+					navigationItems.eq(activeSection)
+						.addClass('visible');
+				}, 1);
+			} else {
+				navigationItems.eq(activeSection)
+					.removeClass('display')
+					.removeClass('visible');
+			}
+		});
+	}
+	
 });

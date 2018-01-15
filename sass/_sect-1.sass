@@ -1,54 +1,63 @@
-.sect-1
-	&_bg__light
-		opacity: 0
-	&_bg__boat-girl
-		transform: translate(150%, 150%)
-	&_title-text
-		opacity: 0
-		transform: scale(.8) translateY(5vh)
-	&_desc-block
-		opacity: 0
-
-body.ready
+@media screen and (min-width : 1200px)
 	.sect-1
 		&_bg__light
-			animation: light-anim 1s ease-in-out
-			animation-fill-mode: forwards
+			opacity: 0
 		&_bg__boat-girl
-			animation: boat-girl-anim 2s ease-in-out .5s
-			animation-fill-mode: forwards
+			transform: translate(150%, 150%)
 		&_title-text
-			animation: title-text-anim 1s cubic-bezier(.17,.67,.47,1.23) 1s
-			animation-fill-mode: forwards
+			opacity: 0
+			transform: scale(.8) translateY(5vh)
 		&_desc-block
-			animation: desc-block-anim 1s ease-in-out 2s
+			opacity: 0
+
+	body.ready
+		.sect-1
+			animation: sect-anim 1s ease-in-out 3s
 			animation-fill-mode: forwards
+			&_bg__light
+				animation: light-anim 1s ease-in-out
+				animation-fill-mode: forwards
+			&_bg__boat-girl
+				animation: boat-girl-anim 2s ease-in-out .5s
+				animation-fill-mode: forwards
+			&_title-text
+				animation: title-text-anim 1s cubic-bezier(.17,.67,.47,1.23) 1s
+				animation-fill-mode: forwards
+			&_desc-block
+				animation: desc-block-anim 1s ease-in-out 2s
+				animation-fill-mode: forwards
+
+	@keyframes sect-anim
+		0%
+			margin-top: 0
+		100%
+			margin-top: 47px
 	
-@keyframes light-anim
-	0%
-		opacity: 0
-	100%
-		opacity: 1
-	
-@keyframes boat-girl-anim
-	0%
-		transform: translate(150%, 150%)
-	100%
-		transform: translate(0, 0)
-	
-@keyframes title-text-anim
-	0%
-		opacity: 0
-		transform: scale(.8) translateY(5vh)
-	100%
-		opacity: 1
-		transform: scale(1) translateY(0)
-	
-@keyframes desc-block-anim
-	0%
-		opacity: 0
-	100%
-		opacity: 1
+	@keyframes light-anim
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+
+	@keyframes boat-girl-anim
+		0%
+			transform: translate(150%, 150%)
+		100%
+			transform: translate(0, 0)
+
+	@keyframes title-text-anim
+		0%
+			opacity: 0
+			transform: scale(.8) translateY(5vh)
+		100%
+			opacity: 1
+			transform: scale(1) translateY(0)
+
+	@keyframes desc-block-anim
+		0%
+			opacity: 0
+		100%
+			opacity: 1
 
 .sect-1
 	z-index: 10

@@ -52,41 +52,53 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	
-	<header class="header">
+	<div class="top-line">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-2">
-					<a href="#" class="header_logo">
-						<img src="img/logo-ocrimea.svg" class="img-svg">
-					</a>
+				<div class="col-md-9">
+					<p>Нужен тур на другое количество дней или? Рассчитайте самостоятельно, с помощью калькулятора туров!</p>
 				</div>
-				<div class="col-sm-12 col-md-10 hidden-xs">
-					<ul class="header_menu">
-						<li class="scroll-sect" data-slide="2">
-							<a href="#">О туре</a>
-						</li>
-						<li class="scroll-sect" data-slide="3">
-							<a href="#">Что внутри</a>
-						</li>
-						<li class="scroll-sect" data-slide="5">
-							<a href="#">Цены и даты</a>
-						</li>
-						<li class="scroll-sect" data-slide="6">
-							<a href="#">Что включено</a>
-						</li>
-						<li class="scroll-sect" data-slide="7">
-							<a href="#">Почему этот тур?</a>
-						</li>
-						<li class="scroll-sect" data-slide="8">
-							<a href="#">Вопрос - ответ</a>
-						</li>
-					</ul>
+				<div class="col-md-3">
+					<a href="#" class="scroll-sect" data-slide="5">Рассчитать >></a>
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<section id="sect-1" class="sect sect-1">
+		<header class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-2">
+						<a href="#" class="header_logo">
+							<img src="img/logo-ocrimea.svg" class="img-svg">
+						</a>
+					</div>
+					<div class="col-sm-12 col-md-10 hidden-xs">
+						<ul class="header_menu">
+							<li class="scroll-sect" data-slide="2">
+								<a href="#">О туре</a>
+							</li>
+							<li class="scroll-sect" data-slide="3">
+								<a href="#">Что внутри</a>
+							</li>
+							<li class="scroll-sect" data-slide="5">
+								<a href="#">Цены и даты</a>
+							</li>
+							<li class="scroll-sect" data-slide="6">
+								<a href="#">Что включено</a>
+							</li>
+							<li class="scroll-sect" data-slide="7">
+								<a href="#">Почему этот тур?</a>
+							</li>
+							<li class="scroll-sect" data-slide="8">
+								<a href="#">Вопрос - ответ</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
 		<div class="sect-1_bg sect-1_bg__1">
 			<div class="sect-1_title-block">
 				<h2 class="sect-1_title-text sect-1_title-text__1">Мечтаешь о</h2>
@@ -969,7 +981,7 @@
 				<div class="ya-share2" data-services="odnoklassniki,facebook,vkontakte" data-size="m" data-title="Это оно! 11 дней, всё включено" data-image="http://tour.o-crimea.ru/img/smm-repost-vk.png" data-description="Оставляю сайт в закладки. Лайки и репосты приветствуются. Говорят, за это будут подарки."></div>
 				<div class="popup_or">- ИЛИ -</div>
 
-				<button class="btn btn__lg btn__orange popup_btn js-tgl-callback">Оставьте заявку <span class="hidden-xs">сейчас</span></button>
+				<button class="btn btn__lg btn__orange popup_btn js-tgl-social-1 js-tgl-callback">Оставьте заявку <span class="hidden-xs">сейчас</span></button>
 				<button class="popup_close js-tgl-social-1"></button>
 			</div>
 		</div>
@@ -986,7 +998,7 @@
 				<div class="ya-share2" data-services="odnoklassniki,facebook,vkontakte" data-size="m" data-title="Это оно! 11 дней, всё включено" data-image="http://tour.o-crimea.ru/img/smm-repost-vk.png" data-description="Оставляю сайт в закладки. Лайки и репосты приветствуются. Говорят, за это будут подарки."></div>
 				<p class="popup_desc">Поделитесь новостью с друзьями. <br>Будем признательны.</p>
 
-				<button class="btn btn__lg btn__orange popup_btn js-tgl-callback">Оставьте заявку <span class="hidden-xs">сейчас</span></button>
+				<button class="btn btn__lg btn__orange popup_btn js-tgl-social-2 js-tgl-callback">Оставьте заявку <span class="hidden-xs">сейчас</span></button>
 				<button class="popup_close js-tgl-social-2"></button>
 			</div>
 		</div>
@@ -1026,6 +1038,8 @@
 			</li>
 		</ul>
 	</menu>
+	
+	<button class="calc-btn scroll-sect" data-slide="5"><img src="img/calc.svg" class="img-svg"></button>
 
 
 	<link rel="stylesheet" href="css/slick.css">

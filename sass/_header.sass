@@ -1,15 +1,17 @@
-.header
-	top: -14.8vh
-	opacity: 0
-
-body.ready
+@media screen and (min-width : 1200px)
 	.header
-		top: 0
-		opacity: 1
+		top: -14.8vh
+		opacity: 0
+
+	body.ready
+		.header
+			top: 0
+			opacity: 1
 
 .header
 	position: absolute
 	z-index: 15
+	top: 0
 	left: 0
 	width: 100vw
 	height: 14.8vh
