@@ -97,12 +97,14 @@
 			white-space: nowrap
 			display: none
 			opacity: 0
+			border-top-right-radius: 2px
+			border-bottom-right-radius: 2px
 			+trs(.3s)
 			&::before
 				content: ''
 				display: block
 				position: absolute
-				right: -12px
+				right: -11px
 				width: 0
 				height: 0
 				border-style: solid
@@ -180,6 +182,10 @@
 		box-shadow: 0 0 0 0px rgba($orange, .6)
 	100%
 		box-shadow: 0 0 0 10px rgba($orange, 0)
+
+@media only screen and (max-width : 1199px)
+	.top-line
+		display: none
 
 @media only screen and (max-width : 767px)
 	.sect
