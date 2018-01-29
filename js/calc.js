@@ -33,7 +33,7 @@
 }));
 
 $(function() {
-	var URL = 'http://ocrimea.local';
+	var URL = 'http://o-crimea.ru';
 	
 	//получение списков отелей, кол-ва человек
 	$.ajax({
