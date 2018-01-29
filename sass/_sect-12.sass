@@ -1,0 +1,53 @@
+.sect-12
+	&_slider
+		position: relative
+		margin-top: 70px
+	&_slider-prev,
+	&_slider-next
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		font-size: 40px
+	&_slider-prev
+		left: -40px
+	&_slider-next
+		right: -40px
+	&_all-reviews
+		margin-top: 96px
+		text-align: center
+	
+.s12-slider
+	&_item
+		padding-left: 15px
+		padding-right: 15px
+	&_title,
+	&_text,
+	&_auth
+		color: $text-dark
+	&_title
+		+Alice
+		font-size: 30px
+		font-weight: 400
+	&_text
+		text-align: left
+		font-weight: 400
+	&_auth
+		text-align: right
+		font-weight: 700
+
+@media only screen and (max-width : 991px)
+	.sect-12
+		&_slider
+			margin-top: 45px
+			padding-bottom: 81px
+		&_slider-prev,
+		&_slider-next
+			position: absolute
+			top: auto
+			bottom: 0
+			transform: translateY(0)
+			font-size: 40px
+		&_slider-prev
+			left: calc(50% - 45px)
+		&_slider-next
+			right: calc(50% - 45px)

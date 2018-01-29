@@ -22,7 +22,8 @@
 		outline: none
 		&:hover, &.slick-current.slick-active
 			.s4-slider
-				&_title
+				&_title,
+				&_desc
 					color: $orange
 				&_img-mask::before
 					background-color: transparent
@@ -32,13 +33,16 @@
 				&_btn
 					opacity: 1
 	&_title
-		margin: 0 0 23px
+		margin: 0
 		color: #fff
 		font-size: 24px
 		line-height: 36px
 		font-weight: 700
 		+trs(.3s)
+	&_desc
+		margin: 0
 	&_img-mask
+		margin-top: 23px
 		display: inline-block
 		width: 274px
 		height: 176px

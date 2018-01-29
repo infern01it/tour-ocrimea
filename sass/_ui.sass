@@ -127,7 +127,7 @@ p
 		padding: 0 9px
 		height: 71px
 		font-size: 24px
-		line-height: 30px
+		line-height: 68px
 		font-weight: 400
 		&::before
 			left: -35px
@@ -172,6 +172,20 @@ p
 			border-right-color: $blue
 		&::after
 			border-left-color: $blue
+	&__grey
+		background-color: #c4d9e2
+		color: #000
+		&:hover, &:focus, &:active
+			background-color: #b1c7d0
+			color: #000
+			&::before
+				border-right-color: #b1c7d0
+			&::after
+				border-left-color: #b1c7d0
+		&::before
+			border-right-color: #c4d9e2
+		&::after
+			border-left-color: #c4d9e2
 	&__animate
 		animation: phone-fn 2s infinite ease-in-out
 	&_pin
@@ -203,6 +217,79 @@ p
     100%
         opacity: 0;
         transform: scale(1.2)
+	
+.checkbox
+	position: relative
+	margin: 0
+	input[type="checkbox"]
+		&:checked,
+		&:not(:checked)
+			position: absolute
+			opacity: 0
+			margin: 0
+		+ label
+			position: relative
+			display: inline-block
+			width: 100%
+			color: #333
+			cursor: pointer
+			margin-bottom: 0
+			text-align: left
+			&::before
+				position: absolute
+				content: ''
+				display: block
+				top: 6px
+				width: 15px
+				height: 15px
+				border: 1px solid #c4d9e2
+			&::after
+				position: absolute
+				content: ''
+				display: block
+				top: 6px
+				width: 6px
+				height: 11px
+				transform: rotate(45deg)
+				transition: all .3s ease-in-out
+				border-right: 2px solid $orange
+				border-bottom: 2px solid $orange
+				opacity: 0
+		&:checked + label::after
+			opacity: 1
+	&__1
+		input[type="checkbox"]
+			+ label
+				font-size: 16px
+				font-weight: 300
+				padding-left: 28px
+				&::before
+					left: 0
+				&::after
+					left: 5px
+	&__2
+		input[type="checkbox"]
+			+ label
+				font-size: 18px
+				font-weight: 300
+				&::before
+					right: 0
+				&::after
+					right: 4px
+	&__3
+		input[type="checkbox"]
+			width: 0 !important
+			height: 0 !important
+			+ label
+				font-family: "RobotoSlabLight" !important
+				font-size: 16px !important
+				line-height: 26px !important
+				padding-left: 25px
+				margin-top: 0
+				&::before
+					left: 0
+				&::after
+					left: 5px
 
 .design-border
 	position: relative
