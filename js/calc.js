@@ -117,9 +117,15 @@ $(function() {
 	//выбор отеля
     $('#hotel.form-calc_select-el').on('change', function(){
         if($('#hotel.form-calc_select-el option:selected').hasClass('disabled')) {
+            $('.form-calc_btn-edit').attr('disabled', true);
+            $('.form-calc_btn-submit').attr('disabled', true);
+			
             $('.form-calc_date-el').parent('.form-calc_select-box').addClass('invalid');
             $('.price_note').html('Объект не доступен в выбранные даты. Пожалуйста, выберите другие даты или объект.').addClass('invalid');
         } else {
+            $('.form-calc_btn-edit').attr('disabled', false);
+            $('.form-calc_btn-submit').attr('disabled', false);
+			
             $('.form-calc_date-el').parent('.form-calc_select-box').removeClass('invalid');
             $('.price_note').html('').removeClass('invalid');
         }

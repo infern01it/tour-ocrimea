@@ -2635,6 +2635,10 @@ p {
 	background-image: url("../img/sect-10/select-arrow.png");
 }
 
+.form-calc_select-el option.disabled {
+	color: #d4d4d4;
+}
+
 .form-calc_date-el {
 	background-image: url("../img/sect-10/calendar-icon.png");
 }
