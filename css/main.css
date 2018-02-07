@@ -50,6 +50,7 @@ html {
 }
 
 body {
+	background-color: #13262f;
 	min-width: 320px;
 	position: relative;
 	font-family: "RobotoSlab";
@@ -2238,6 +2239,7 @@ p {
 }
 
 .sect-8 {
+	background-color: #fff;
 	background-image: url(../img/sect-8/stone-1.png), url(../img/sect-8/stone-2.png), url(../img/sect-8/stone-5.png), url(../img/sect-8/stone-3.png), url(../img/sect-8/stone-4.png), url(../img/sect-8/stone-0.png);
 	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 	background-position: 274px -40px, 100% 638px, 150px 80%, 0 50%, 100% 10%, 98% 90%;
@@ -2526,38 +2528,8 @@ p {
 	background-image: url(../img/bg/10.jpg);
 }
 
-.sect-10 {
-	padding: 118px 0 148px;
-}
-
-.sect-10_title, .sect-10_desc {
-	font-family: "Alice", serif;
-	color: #003348;
-	text-align: center;
-}
-
-.sect-10_title {
-	font-size: 60px;
-	margin: 0 0 30px;
-}
-
-.sect-10_desc {
-	margin: 0 0 97px;
-}
-
-.sect-10_form {
-	width: 100%;
-}
-
-.sect-10_form::after {
-	content: ' ';
-	display: table;
-	clear: both;
-}
-
-.sect-10_stick {
-	display: block;
-	margin: 0 auto 36px;
+.sect-11 {
+	background-color: #fff;
 }
 
 .form-calc {
@@ -2632,7 +2604,7 @@ p {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-image: url("../img/sect-10/select-arrow.png");
+	background-image: url("../img/sect-11/select-arrow.png");
 }
 
 .form-calc_select-el option.disabled {
@@ -2640,7 +2612,7 @@ p {
 }
 
 .form-calc_date-el {
-	background-image: url("../img/sect-10/calendar-icon.png");
+	background-image: url("../img/sect-11/calendar-icon.png");
 }
 
 .form-calc_date-el::-webkit-input-placeholder {
@@ -2810,6 +2782,10 @@ p {
 		width: 100%;
 		padding: 0 15px;
 	}
+}
+
+.sect-12 {
+	background-color: #fff;
 }
 
 .sect-12_slider {

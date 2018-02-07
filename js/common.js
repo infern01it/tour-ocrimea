@@ -1,3 +1,38 @@
+(function($) {
+	/* Показать/Скрыть попап
+	 * В jQuery объект передается блок попапа
+	 * 1 параметр - класс кнопки по которой будет появляться/исчезать попап (typeof string)
+	 * 2 параметр - время анимации появления/исчезновения попапа (typeof number)
+	 */
+	$.fn.switchPopup = function(btn, time) {		
+		var $popup = this;
+		$(document).on('click', btn, function() {
+			var $scrollWidth = window.innerWidth - document.documentElement.clientWidth
+			var $time = typeof time === 'number' ? time : 300;
+			
+			if($popup.hasClass('display')) {
+				$popup.removeClass('visible');
+				setTimeout(function() {
+					$popup.removeClass('display');
+					$('html').css({
+						'padding-right': 0,
+						'overflow': 'auto'
+					});
+				}, $time);
+			} else {
+				$popup.addClass('display');
+				setTimeout(function() {
+					$popup.addClass('visible');
+				}, 1);
+				$('html').css({
+					'padding-right': $scrollWidth,
+					'overflow': 'hidden'
+				});
+			}
+		});
+	};
+})(jQuery);
+
 $(function() {
 	/* ИМГ В СВГ */
 	$('img.img-svg').each(function(){
@@ -28,44 +63,13 @@ $(function() {
 		}, 'xml');
 	});
 	
-	/* Показать/Скрыть попап */
-	var switchPopup = function(block) {
-		var popup = $(block);
-		
-		if(popup.hasClass('display')) {
-			popup.removeClass('visible');
-			setTimeout(function() {
-				popup.removeClass('display');
-				$('html').css('overflow-y', 'auto');
-			}, 300);
-		} else {
-			popup.addClass('display');
-			setTimeout(function() {
-				popup.addClass('visible');
-			}, 1);
-			$('html').css('overflow-y', 'hidden');
-		}
-	}
+	$(".lazyload").lazyload();
 	
-	$(document).on('click', '.js-tgl-callback', function() {
-		switchPopup('.popup_callback');
-	});
-	
-	$(document).on('click', '.js-tgl-social-1', function() {
-		switchPopup('.popup_social-1');
-	});
-	
-	$(document).on('click', '.js-tgl-social-2', function() {
-		switchPopup('.popup_social-2');
-	});
-	
-	$(document).on('click', '.js-tgl-map', function() {
-		switchPopup('.popup_map');
-	});
-	
-	$(document).on('click', '.js-tgl-menu', function() {
-		switchPopup('.mobile-menu');
-	});
+	$('.popup_callback').switchPopup('.js-tgl-callback', 300);
+	$('.popup_social-1').switchPopup('.js-tgl-social-1', 300);
+	$('.popup_social-2').switchPopup('.js-tgl-social-2', 300);
+	$('.popup_map').switchPopup('.js-tgl-map', 300);
+	$('.mobile-menu').switchPopup('.js-tgl-menu', 300);
 	
 	/* TODO: Настройки слайдеров 4й и 10й секций - Начало */
 	var s4SliderSettings = {

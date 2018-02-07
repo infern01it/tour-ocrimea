@@ -39,9 +39,7 @@ $(function() {
 	$.ajax({
 		url: URL + '/wp-admin/admin-ajax.php?action=get-calc-data',
 		type: 'GET',
-		success: function(res){
-			console.log(res);
-
+		success: function(res) {
             from.datepicker("option", "minDate", new Date(res.date_min * 1000));
             from.datepicker("option", "maxDate", new Date(res.date_max * 1000));
             to.datepicker("option", "minDate", new Date(res.date_min * 1000));
@@ -171,7 +169,8 @@ $(function() {
                         $('#city-'+id).attr('checked',false);
                     }
 
-                    var total_price = data.excursion_price + data.feed_price + data.hotel_price + data.transfer_price; //сложение общей стоимости
+					function nn(val) { return val ? val : 0; }
+                    var total_price = nn(data.excursion_price) + nn(data.feed_price) + nn(data.hotel_price) + nn(data.transfer_price); //сложение общей стоимости
                     $('.form-calc_price').html((total_price+' ').replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1 ")+" рублей*");
                     $('.price_note').html('* Ориентировочная стоимость путевки на '+data.total_peoples+' человек, в соответствие с выбранными вами параметрами. Окончательную стоимость уточняйте у вашего менеджера.').removeClass('invalid');
                     if(status === 0) {
