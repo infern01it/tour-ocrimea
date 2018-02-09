@@ -1610,10 +1610,6 @@ p {
 	}
 }
 
-.sect-2 {
-	background-image: url("../img/bg/2.jpg");
-}
-
 .sect-2_table {
 	margin-top: 130px;
 }
@@ -1636,10 +1632,6 @@ p {
 	.sect-2_table, .sect-2_btm-desc {
 		margin-top: 30px;
 	}
-}
-
-.sect-3 {
-	background-image: url("../img/bg/3.jpg");
 }
 
 .sect-3_circle {
@@ -1748,10 +1740,6 @@ p {
 	.sect-3_content {
 		margin-top: 0;
 	}
-}
-
-.sect-4 {
-	background-image: url("../img/bg/4.jpg");
 }
 
 .sect-4_slider {
@@ -1914,7 +1902,6 @@ p {
 }
 
 .sect-5 {
-	background-image: url("../img/bg/5.jpg");
 	background-position: 50% 0;
 }
 
@@ -2167,10 +2154,6 @@ p {
 	color: #95bdce;
 }
 
-.sect-6 {
-	background-image: url("../img/bg/6.jpg");
-}
-
 .sect-6_content {
 	margin-top: 69px;
 }
@@ -2233,10 +2216,6 @@ p {
     .sect-6_content ul.minus li::before {
 		display: none;
 	}
-}
-
-.sect-7 {
-	background-image: url("../img/bg/7.jpg");
 }
 
 .sect-7_content {
@@ -2457,10 +2436,6 @@ p {
 	}
 }
 
-.sect-9 {
-	background-image: url(../img/bg/9.jpg);
-}
-
 .sect-9_quote {
 	position: relative;
 	margin: 0 0 40px;
@@ -2564,10 +2539,6 @@ p {
 	.sect-9_btm-block {
 		margin-top: 60px;
 	}
-}
-
-.sect-10 {
-	background-image: url(../img/bg/10.jpg);
 }
 
 .sect-11 {
