@@ -7,6 +7,8 @@
 	$.fn.switchPopup = function(btn, time) {		
 		var $popup = this;
 		$(document).on('click', btn, function() {
+			var $subject = $(this).data('subject');
+			$subject = typeof $subject === 'undefined' ? '' : $subject;
 			var $scrollWidth = window.innerWidth - document.documentElement.clientWidth
 			var $time = typeof time === 'number' ? time : 300;
 			
@@ -20,6 +22,7 @@
 					});
 				}, $time);
 			} else {
+				$popup.find('input.callback-form-subject').val($subject);
 				$popup.addClass('display');
 				setTimeout(function() {
 					$popup.addClass('visible');
@@ -238,6 +241,5 @@ $(function() {
 					.removeClass('visible');
 			}
 		});
-	}
-	
+	}	
 });

@@ -203,39 +203,84 @@ $(function() {
 			$('.calc-popup_btn-submit').css('display', 'none');
 		}
 	});
-	
-	$('.calc_submit_form').on('submit',function(e){
-		e.preventDefault();
-		if($('.form-calc_checkbox #agreement').prop("checked")) {
-			var userData = $(this).serializeArray();
-			if (typeof formData != "undefined") {
-				userData.forEach(function(item){
-					formData.append(item.name,item.value+"");
-				});
-				formData.append("submit_calc_form","1");
-				$(".calc_submit_form input").css('border-color','#c4d9e2');
-				$.ajax({
-					url: '/wp-admin/admin-ajax.php?action=calculate-tour',
-					type: 'POST',
-					data: formData,
-					cache: false,
-					contentType: false,
-					processData: false,
-					success: function(res){
-						var data = res.data;
-						if(res.result){
-							$(".sect-10-calc").attr("type","button").html("Заявка успешно отправлена");
-						} else {
-							for (var key in data) {
-								var item = data[key];
-								$('[name="data['+key+']"]').parent('.calc-popup_input-text').addClass('invalid');
-							}
-						}
-					}
-				});
-			}
-		}
-	});
+
+    /* Отправка, проверка формы обратной связи */
+    $('.popup_form_submit').on('click',function(){
+        $("#callback-form").submit();
+    });
+    $('#callback-form input').on('focus',function(){
+        $(this).css("border-color", "");
+    });
+    $("#callback-form").on('submit',function(e){
+        e.preventDefault();
+        var $form = $(this);
+
+        var $subject = $('input.callback-form-subject',$form).val();
+
+        var $data = new FormData();
+        var url = 'form.php';
+        if ($subject === 'calc') {
+            $data = formData;
+            formData.append("submit_calc_form","1");
+            url = URL + '/wp-admin/admin-ajax.php?action=calculate-tour';
+        }
+
+        function validator(string,type) {
+            if(type === 'name'){
+                /* Имя */
+                var reName = /^[a-zA-Zа-яА-ЯёЁ ]+$/;
+                var valid = reName.test(string);
+            }else if(type === 'tel'){
+                /* Телефон */
+                var rePhone = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+                var valid = rePhone.test(string);
+            }else if (type === 'email'){
+                /* EMail */
+                var reMail = /^[\w\-\.]+@[\w\.-]+$/i;
+                var valid = reMail.test(string);
+            }else{
+                return false;
+            }
+            if(valid){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        var err = false;
+        var formItems = {};
+        $('input[type=text],input[type=tel],input[type=email]',$form).each(function(){
+            var item = $(this);
+            var name = item.attr('name');
+            var value = item.val();
+            if(validator(value,name)){
+                $data.append(name,value+"");
+                formItems[name] = value;
+            }else{
+                item.css("border-color", "red");
+                err = true;
+            }
+        });
+        if(err)return false;
+
+        var id = formItems['name'].length + formItems['tel'] + formItems['email'];
+        $.cookie('formid',md5(String(id)));
+        $data.append('id',id+"");
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: $data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (callback) {
+                console.log(callback);
+                $("#message").html(callback);
+            }
+        });
+    });
 
     var dateFormat = "dd.mm.yy",
         dateSettings = {
