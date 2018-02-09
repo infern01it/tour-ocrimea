@@ -1,6 +1,4 @@
 $(function() {	
-	$('.popup_callback').switchPopup('.js-tgl-callback');
-	
 	$('.gallery_slider').slick({
 		lazyLoad: 'ondemand',
 		infinite: true,

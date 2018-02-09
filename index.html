@@ -850,7 +850,7 @@
 						<div class="form-calc_btn-block">
 							<button type="submit" class="btn btn__lg btn__grey form-calc_btn-submit">Просчитать</button>
 							<button type="button" class="btn btn__lg btn__grey form-calc_btn-edit">Пересчитать</button>
-							<button type="button" class="btn btn__lg btn__orange form-calc_btn-request js-tgl-callback">Отправить заявку</button>
+							<button type="button" class="btn btn__lg btn__orange form-calc_btn-request js-tgl-callback" data-subject="calc">Отправить заявку</button>
 						</div>
 					</form>
 				</div>
@@ -1206,7 +1206,7 @@
 					<h2 class="sect_title sect_title__white sect-9_title">Остались вопросы?</h2>
 					<p class="sect-9_desc">Остались вопросы? Мы с радостью ответим!<br>Просто свяжитесь с нами:</p>
 					
-					<button class="btn btn__animate btn__blue btn__lg sect-9_callback js-tgl-callback" onclick="ga('send', 'event', 'OCrimea', 'sect9'); yaCounter43375559.reachGoal('callback'); return true;">Обратный звонок
+					<button class="btn btn__animate btn__blue btn__lg sect-9_callback js-tgl-callback" data-subject="callback" onclick="ga('send', 'event', 'OCrimea', 'sect9'); yaCounter43375559.reachGoal('callback'); return true;">Обратный звонок
 						<span class="btn btn_pin btn_pin__animate btn__blue btn__lg"></span>
 					</button>
 				</div>
@@ -1259,13 +1259,14 @@
 				<h2 class="popup_title sect_title sect_title__dark">Заполните простую форму</h2>
 
 				<form class="popup_form" id="callback-form">
+					<input type="hidden" name="subject" class="callback-form-subject">
 					<p>
 						<label for="name">Введите Ваше имя</label>
 						<input id="name" type="text" name="name" placeholder="Имя" required>
 					</p>
 					<p>
 						<label for="phone">Введите Ваш телефон</label>
-						<input id="phone" type="tel" name="phone" placeholder="+79XXXXXXXXX" required>
+						<input id="phone" type="tel" name="tel" placeholder="+79XXXXXXXXX" required>
 					</p>
 					<p>
 						<label for="email">Введите Ваш e-mail</label>
@@ -1278,7 +1279,7 @@
 					<p class="popup_message" id="message"></p>
 				</form>
 
-				<button class="btn btn__lg btn__orange popup_btn" onclick="ga('send', 'event', 'OCrimea', 'submit'); yaCounter43375559.reachGoal('send-form'); return true;">Отправить заявку</button>
+				<button class="btn btn__lg btn__orange popup_btn popup_form_submit" onclick="ga('send', 'event', 'OCrimea', 'submit'); yaCounter43375559.reachGoal('send-form'); return true;">Отправить заявку</button>
 				<button class="popup_close js-tgl-callback"></button>
 			</div>
 		</div>
@@ -1359,8 +1360,10 @@
 	<link rel="stylesheet" href="css/slick-theme.css">
 	
 	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/slick.min.js"></script>
+	<script src="js/md5.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/index-page.js"></script>
 	<script src="js/calc.js"></script>

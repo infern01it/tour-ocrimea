@@ -1,7 +1,6 @@
 $(function() {
 	$(".lazyload").lazyload();
 	
-	$('.popup_callback').switchPopup('.js-tgl-callback');
 	$('.popup_social-1').switchPopup('.js-tgl-social-1');
 	$('.popup_social-2').switchPopup('.js-tgl-social-2');
 	$('.popup_map').switchPopup('.js-tgl-map');

@@ -9,7 +9,7 @@ var gulp           = require('gulp'),
 
 // Browser Synk
 gulp.task('browser-sync', function() {
-	browserSync({ server: { baseDir: '' }, notify: false });
+	browserSync({ server: true, notify: false });
 });
 
 // Слежение за JS

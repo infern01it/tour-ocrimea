@@ -1,12 +1,9 @@
 (function($) {
-	/* Показать/Скрыть попап
-	 * В jQuery объект передается блок попапа
-	 * 1 параметр - класс кнопки по которой будет появляться/исчезать попап (typeof string)
-	 * 2 параметр - время анимации появления/исчезновения попапа (typeof number)
-	 */
 	$.fn.switchPopup = function(btn, time) {		
 		var $popup = this;
 		$(document).on('click', btn, function() {
+			var $subject = $(this).data('subject');
+			$subject = typeof $subject === 'undefined' ? '' : $subject;
 			var $scrollWidth = window.innerWidth - document.documentElement.clientWidth
 			var $time = typeof time === 'number' ? time : 300;
 			
@@ -20,6 +17,7 @@
 					});
 				}, $time);
 			} else {
+				$popup.find('input.callback-form-subject').val($subject);
 				$popup.addClass('display');
 				setTimeout(function() {
 					$popup.addClass('visible');
@@ -62,4 +60,6 @@ $(function() {
 
 		}, 'xml');
 	});
+	
+	$('.popup_callback').switchPopup('.js-tgl-callback');
 });
