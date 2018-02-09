@@ -45,6 +45,14 @@ body textarea:required:valid {
 	color: #666;
 }
 
+* {
+	backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+}
+
 html {
 	overflow-x: hidden;
 }
@@ -59,11 +67,6 @@ body {
 	font-weight: 400;
 	color: #4a4a4a;
 	overflow-x: hidden;
-	backface-visibility: hidden;
-	-o-backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
 }
 
 section {
@@ -255,6 +258,19 @@ p {
 	border-left-color: #ffc91b;
 }
 
+.btn__orange:disabled {
+	background-color: #ffe182;
+	opacity: 1;
+}
+
+.btn__orange:disabled::before {
+	border-right-color: #ffe182;
+}
+
+.btn__orange:disabled::after {
+	border-left-color: #ffe182;
+}
+
 .btn__white {
 	background-color: #fff;
 	color: #000;
@@ -294,6 +310,19 @@ p {
 	border-left-color: #3dbafd;
 }
 
+.btn__blue:disabled {
+	background-color: #94d9fe;
+	opacity: 1;
+}
+
+.btn__blue:disabled::before {
+	border-right-color: #94d9fe;
+}
+
+.btn__blue:disabled::after {
+	border-left-color: #94d9fe;
+}
+
 .btn__grey {
 	background-color: #c4d9e2;
 	color: #000;
@@ -318,6 +347,19 @@ p {
 
 .btn__grey::after {
 	border-left-color: #c4d9e2;
+}
+
+.btn__grey:disabled {
+	background-color: #dfeaef;
+	opacity: 1;
+}
+
+.btn__grey:disabled::before {
+	border-right-color: #dfeaef;
+}
+
+.btn__grey:disabled::after {
+	border-left-color: #dfeaef;
 }
 
 .btn__animate {

@@ -1,4 +1,8 @@
-$(function() {	
+$(function() {
+	$(document).ready(function() {
+		$("html,body").animate({"scrollTop": 0});
+	});
+	
 	$('.gallery_slider').slick({
 		lazyLoad: 'ondemand',
 		infinite: true,

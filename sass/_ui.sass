@@ -5,6 +5,13 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
+*
+	backface-visibility: hidden
+	-o-backface-visibility: hidden
+	-webkit-backface-visibility: hidden
+	-moz-backface-visibility:    hidden
+	-ms-backface-visibility:     hidden
+
 html
 	overflow-x: hidden
 
@@ -18,11 +25,6 @@ body
 	font-weight: 400
 	color: #4a4a4a
 	overflow-x: hidden
-	backface-visibility: hidden
-	-o-backface-visibility: hidden
-	-webkit-backface-visibility: hidden
-	-moz-backface-visibility:    hidden
-	-ms-backface-visibility:     hidden
 
 section
 	position: relative
@@ -152,6 +154,13 @@ p
 			border-right-color: $orange
 		&::after
 			border-left-color: $orange
+		&:disabled
+			background-color: mix($orange, #fff, 55%)
+			opacity: 1
+			&::before
+				border-right-color: mix($orange, #fff, 55%)
+			&::after
+				border-left-color: mix($orange, #fff, 55%)
 	&__white
 		background-color: #fff
 		color: #000
@@ -173,6 +182,13 @@ p
 			border-right-color: $blue
 		&::after
 			border-left-color: $blue
+		&:disabled
+			background-color: mix($blue, #fff, 55%)
+			opacity: 1
+			&::before
+				border-right-color: mix($blue, #fff, 55%)
+			&::after
+				border-left-color: mix($blue, #fff, 55%)
 	&__grey
 		background-color: #c4d9e2
 		color: #000
@@ -187,6 +203,13 @@ p
 			border-right-color: #c4d9e2
 		&::after
 			border-left-color: #c4d9e2
+		&:disabled
+			background-color: mix(#c4d9e2, #fff, 55%)
+			opacity: 1
+			&::before
+				border-right-color: mix(#c4d9e2, #fff, 55%)
+			&::after
+				border-left-color: mix(#c4d9e2, #fff, 55%)
 	&__animate
 		animation: phone-fn 2s infinite ease-in-out
 	&_pin

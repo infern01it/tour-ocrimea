@@ -62,4 +62,9 @@ $(function() {
 	});
 	
 	$('.popup_callback').switchPopup('.js-tgl-callback');
+	
+	$('#politconf').on('change', function() {
+		console.log(!$(this).prop('checked'));
+		$(this).parents('.popup').find('button.btn').attr('disabled', !$(this).prop('checked'));
+	});
 });

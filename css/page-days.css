@@ -35,6 +35,7 @@
 
 .gallery {
 	position: relative;
+	background-color: #fff;
 }
 
 .gallery_slider {
